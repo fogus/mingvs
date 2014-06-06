@@ -36,4 +36,8 @@ struct symbol_table_node_t
     struct gc_descriptor_t      gc_descr;
 };
 
+typedef struct symbol_table_node_t SYMBOL_T;
+
+
+
 #endif
