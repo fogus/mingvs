@@ -1,7 +1,6 @@
 .svn
 *.o
 ix
-setup.h
 Debug
 .DS_Store
 *.ipr
