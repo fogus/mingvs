@@ -11,7 +11,7 @@
 #define LOCALE extern
 #endif
 
-#include "setup.h"
+#include "kernel.h"
 
 #include <stdlib.h>
 

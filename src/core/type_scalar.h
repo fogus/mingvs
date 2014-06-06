@@ -13,7 +13,7 @@
 
 #include <stdlib.h>
 
-#include "setup.h"
+#include "kernel.h"
 #include "type_lexeme.h"
 
 struct rt_scalar_data_t
