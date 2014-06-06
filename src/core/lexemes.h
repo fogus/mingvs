@@ -31,7 +31,7 @@ struct symbol_table_node_t
     struct symbol_table_node_t* next;
     long                        count;                   /* The reference count */
     int                         depth;                   /* The symbol's call-depth */
-    gc_descriptor_t             gc_descr;
+    struct gc_descriptor_t      gc_descr;
     char *                      contents;
     type_decl                   t;
 };
