@@ -1,6 +1,8 @@
 #ifndef __SETUP_H__
 #define __SETUP_H__
 
+#include "constants.h"
+
 typedef unsigned int boolean;
 enum { false, true };
 

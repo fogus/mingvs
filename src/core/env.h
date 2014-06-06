@@ -2,7 +2,7 @@
 #define __CORE_ENVIRONMENT_H__
 
 #ifndef __TYPE_SCALARS_H__
-#include "scalars.h"
+#include "type_scalar.h"
 #endif
 
 #ifdef LOCALE
