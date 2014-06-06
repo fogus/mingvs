@@ -1,3 +1,11 @@
+/**
+ *  \file  constant.h
+ *  \brief Global constants and macros
+ *
+ *  \author Fogus
+ *
+ **/
+
 #ifndef __CONSTANT_H__
 #define __CONSTANT_H__
 
