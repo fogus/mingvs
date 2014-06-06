@@ -12,6 +12,7 @@
 #endif
 
 #include "setup.h"
+#include "constants.h"
 #include "gc.h"
 
 #include <stdlib.h>
@@ -36,9 +37,9 @@ struct symbol_table_node_t
 
 typedef struct symbol_table_node_t SYMBOL_T;
 
-
 /* Lexeme function signatures */
 
-LOCALE void init_symbol_table(pointer, struct symbol_table_node_t **);
+LOCALE void init_symbol_table(env_ref, struct symbol_table_node_t **);
+LOCALE void* intern_symbol(env_ref, char *);
 
 #endif

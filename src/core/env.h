@@ -15,6 +15,20 @@
 #define LOCALE extern
 #endif
 
+#include "setup.h"
+#include "constants.h"
+
+#define USER_ENVIRONMENT_DATA_INDEX   70
+#define MAXIMUM_ENVIRONMENT_POSITIONS 100
+
+struct env_t
+{
+    unsigned int   initialized : 1;
+    unsigned long  index;
+    void*          context;
+    void**         data;
+    struct env_t*  next;
+};
 
 #endif
 
