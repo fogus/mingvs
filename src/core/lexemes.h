@@ -29,13 +29,16 @@
 struct symbol_table_node_t
 {
     struct symbol_table_node_t* next;
-    long                        count;                   /* The reference count */
-    int                         depth;                   /* The symbol's call-depth */
     char *                      contents;
     type_decl                   t;
     struct gc_descriptor_t      gc_descr;
 };
 
 typedef struct symbol_table_node_t SYMBOL_T;
+
+
+/* Lexeme function signatures */
+
+LOCALE void init_symbol_table(pointer, struct symbol_table_node_t **);
 
 #endif

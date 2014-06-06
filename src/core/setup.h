@@ -6,5 +6,9 @@ enum { false, true };
 
 typedef char* type_decl;
 
+typedef void* pointer;
+
+#define globle
+
 #endif
 

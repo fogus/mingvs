@@ -5,6 +5,12 @@
 #undef LOCALE
 #endif
 
+#ifdef __TYPE_SCALARS_C__
+#define LOCALE
+#else
+#define LOCALE extern
+#endif
+
 #include <stdlib.h>
 
 #include "lexemes.h"
