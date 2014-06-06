@@ -9,4 +9,17 @@
 
 #include "lexemes.h"
 
+struct rt_scalar_data_t
+{
+    void *              true_symbol;
+    void *              false_symbol;
+    void *              nil_symbol;
+    void *              nothing_symbol;
+    void *              notset_symbol;
+    void *              plus_inf;                 // Plus infinity
+    void *              neg_inf;                  // Negative infinity
+    void *              zero;
+    SYMBOL_T **         symbol_table;
+};
+
 #endif

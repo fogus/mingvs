@@ -38,6 +38,4 @@ struct symbol_table_node_t
 
 typedef struct symbol_table_node_t SYMBOL_T;
 
-
-
 #endif
