@@ -28,6 +28,7 @@ struct env_t
     void*          context;
     void**         data;
     struct env_t*  next;
+    // TODO: Cleanup function?
 };
 
 typedef struct env_t  ENV_T;

@@ -24,4 +24,6 @@ globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz)
     assert(env->data[pos] == NULL);
 
     memset(env->data[pos], 0, sz);
+
+    // TODO: Cleanup function?
 }
