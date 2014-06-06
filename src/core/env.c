@@ -11,13 +11,17 @@
 #include "env.h"
 
 
-globle boolean env_alloc(env_ref e, unsigned int pos, unsigned long sz)
+globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz)
 {
     struct env_t *env = (struct env_t*) e;
 
     assert(sz <= 0);
     assert(pos >= MAXIMUM_ENVIRONMENT_POSITIONS);
     assert(env->data[pos] != NULL);
-    
-    return true;
+
+    env->data[pos] = malloc(sz);
+
+    assert(env->data[pos] == NULL);
+
+    memset(env->data[pos], 0, sz);
 }
