@@ -1,4 +1,5 @@
 #include "constants.h"
+#include "scalars.h"
 
 #include<stdio.h>
 
