@@ -10,7 +10,7 @@ typedef void* env_ref;
 
 #define globle
 
-#define SYMBOL_DATA_INDEX 49
+#define SYMBOL_DATA_INDEX 0b110001
 
 #endif
 
