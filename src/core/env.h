@@ -36,5 +36,7 @@ typedef struct env_t* ENV_PTR;
 #define get_env_data(env, position)        (((struct env_t *)env)->data[position])
 #define set_env_data(env, position, value) (((struct env_t *)env)->data[position] = value)
 
+LOCALE bool env_alloc(void *, unsigned int, unsigned long);
+
 #endif
 
