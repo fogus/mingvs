@@ -12,7 +12,6 @@
 #endif
 
 #include "setup.h"
-#include "gc.h"
 
 #include <stdlib.h>
 

@@ -6,6 +6,7 @@
 #include <string.h>
 
 #include "setup.h"
+#include "kernel_gc.h"
 #include "type_lexeme.h"
 #include "core_env.h"
 
