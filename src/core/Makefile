@@ -1,4 +1,4 @@
-OBJS =  main.o type_lexeme.o env.o
+OBJS =  main.o type_lexeme.o core_env.o
 
 .c.o :
 	gcc -c -Wall  -Wundef -Wpointer-arith -Wshadow -Wcast-qual \
