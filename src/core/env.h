@@ -30,5 +30,11 @@ struct env_t
     struct env_t*  next;
 };
 
+typedef struct env_t  ENV_T;
+typedef struct env_t* ENV_PTR;
+
+#define get_env_data(env, position)        (((struct env_t *)env)->data[position])
+#define set_env_data(env, position, value) (((struct env_t *)env)->data[position] = value)
+
 #endif
 
