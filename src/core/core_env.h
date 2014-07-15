@@ -1,5 +1,5 @@
-#ifndef __CORE_ENVIRONMENT_H__
-#define __CORE_ENVIRONMENT_H__
+#ifndef __CORE_ENV_H__
+#define __CORE_ENV_H__
 
 #ifndef __TYPE_SCALARS_H__
 #include "type_scalar.h"
@@ -9,7 +9,7 @@
 #undef LOCALE
 #endif
 
-#ifdef __CORE_ENVIRONMENT_C__
+#ifdef __CORE_ENV_C__
 #define LOCALE
 #else
 #define LOCALE extern

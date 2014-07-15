@@ -21,6 +21,7 @@ struct memory_pool_t
 };
 
 #define MEMORY_DATA_INDEX 59
+#define MEM_TABLE_SIZE 500
 
 #define get_mem_data(env) ((struct memory_data_t *)get_env_data(env, MEMORY_DATA_INDEX))
 
@@ -28,7 +29,7 @@ struct memory_data_t
 {
     long int               amount;
     long int               calls;
-    BOOL                   is_conserving;
+    boolean                is_conserving;
     struct memory_pool_t*  temp_ptr;
     struct memory_pool_t** mem_table;
     size_t                 temp_sz;

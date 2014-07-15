@@ -1,4 +1,4 @@
-#define __CORE_ENVIRONMENT_C__
+#define __CORE_ENV_C__
 
 #include <stdlib.h>
 #include <stdio.h>
