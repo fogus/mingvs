@@ -21,9 +21,6 @@ globle void kernel_mem_init(env_ref env)
 
     assert(get_mem_data(env)->mem_table == NULL);
 
-    for(i = 0; i < MEM_TABLE_SIZE; i++)
-    {
-        get_mem_data(env)->mem_table[i] = NULL;
-    }
+    for(i = 0; i < MEM_TABLE_SIZE; i++) get_mem_data(env)->mem_table[i] = NULL;
 }
 

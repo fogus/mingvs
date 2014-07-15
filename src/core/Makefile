@@ -7,6 +7,6 @@ OBJS =  main.o type_lexeme.o core_env.o kernel_mem.o
 	    -Wstrict-prototypes -Waggregate-return -Wno-implicit $<
 
 vander : $(OBJS) 
-	gcc -o vander $(OBJS) -lm -ltermcap
+	gcc -o mingvs $(OBJS) -lm -ltermcap
 
 # Dependencies generated using "gcc -MM *.c"
