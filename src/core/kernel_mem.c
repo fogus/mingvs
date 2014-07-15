@@ -45,3 +45,31 @@ globle int ix_free(env_ref env, void* waste, size_t size)
 
     return(0);
 }
+
+globle void* ix_realloc(env_ref env, void *oldaddr, size_t oldsz, size_t newsz)
+{
+    char *newaddr;
+    unsigned i;
+    size_t limit;
+
+    newaddr = ((newsz != 0) ? (char *)ix_alloc(env, newsz) : NULL);
+
+    if( oldaddr != NULL )
+    {
+        limit = (oldsz < newsz) ? oldsz : newsz;
+
+        for( i = 0 ; i < limit ; i++ )
+        {
+            newaddr[i] = ((char *)oldaddr)[i];
+        }
+
+        for(; i < newsz; i++ )
+        {
+            newaddr[i] = '\0';
+        }
+
+        ix_release(env, (void *)oldaddr, oldsz);
+    }
+
+    return((void *)newaddr);
+}
