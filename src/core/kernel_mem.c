@@ -35,3 +35,13 @@ globle void* ix_malloc(env_ref env, size_t size)
 
     return((void *)memPtr);
 }
+
+globle int ix_free(env_ref env, void* waste, size_t size)
+{
+    free(waste);
+
+    get_mem_data(env)->amount -= (long)size;
+    get_mem_data(env)->calls--;
+
+    return(0);
+}

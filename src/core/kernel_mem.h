@@ -38,7 +38,7 @@ struct memory_data_t
 
 LOCALE void  kernel_mem_init(env_ref);
 LOCALE void* ix_malloc(env_ref, size_t);
-LOCALE int   ix_free(void *, void *, size_t);
+LOCALE int   ix_free(env_ref, void *, size_t);
 
 #endif
 
