@@ -36,7 +36,8 @@ struct memory_data_t
     //  TODO: out of mem func 
 };
 
-LOCALE void kernel_mem_init(env_ref);
+LOCALE void  kernel_mem_init(env_ref);
+LOCALE void* ix_malloc(void *, size_t);
 
 #endif
 
