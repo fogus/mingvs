@@ -24,7 +24,7 @@ globle void kernel_mem_init(env_ref env)
     for(i = 0; i < MEM_TABLE_SIZE; i++) get_mem_data(env)->mem_table[i] = NULL;
 }
 
-globle void* ix_malloc(void *env, size_t size)
+globle void* ix_malloc(env_ref env, size_t size)
 {
     char *memPtr = (char *)malloc(size);
 
