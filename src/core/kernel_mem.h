@@ -1,6 +1,8 @@
 #ifndef __MEM_H__
 #define __MEM_H__
 
+#include <string.h>
+
 #ifdef LOCALE
 #undef LOCALE
 #endif
@@ -12,6 +14,11 @@
 #endif
 
 #include "kernel.h"
+
+struct memory_pool_t
+{
+    struct memory_pool_t *next;
+};
 
 #endif
 
