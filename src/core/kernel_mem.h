@@ -20,6 +20,10 @@ struct memory_pool_t
     struct memory_pool_t *next;
 };
 
+#define MEMORY_DATA_INDEX 59
+
+#define get_mem_data(env) ((struct memory_data_t *)get_env_data(env, MEMORY_DATA_INDEX))
+
 struct memory_data_t
 {
     long int               amount;
