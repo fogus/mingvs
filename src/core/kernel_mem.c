@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-globle void init_memory(env_ref env)
+globle void kernel_mem_init(env_ref env)
 {
     int i;
 

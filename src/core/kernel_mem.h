@@ -36,7 +36,7 @@ struct memory_data_t
     //  TODO: out of mem func 
 };
 
-LOCALE void init_memory(void *);
+LOCALE void kernel_mem_init(env_ref);
 
 #endif
 
