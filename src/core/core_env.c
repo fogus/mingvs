@@ -15,7 +15,7 @@ globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz)
     struct env_t *env = (struct env_t*) e;
 
     assert(sz <= 0);
-    assert(pos >= MAXIMUM_ENVIRONMENT_POSITIONS);
+    assert(pos >= MAXIMUM_ENV_SZ);
     assert(env->data[pos] != NULL);
 
     env->data[pos] = malloc(sz);
@@ -26,3 +26,6 @@ globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz)
 
     // TODO: Cleanup function?
 }
+
+
+

@@ -18,7 +18,7 @@
 #include "kernel.h"
 
 #define USER_ENVIRONMENT_DATA_INDEX   70
-#define MAXIMUM_ENVIRONMENT_POSITIONS 100
+#define MAXIMUM_ENV_SZ 100
 
 struct env_t
 {
