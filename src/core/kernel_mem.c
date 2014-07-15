@@ -72,6 +72,21 @@ globle void* ix_alloc(env_ref env, size_t size)
     return((void *)memPtr);
 }
 
+globle int ix_release(env_ref env, void *str, size_t size)
+{
+    struct memory_pool_t *memPtr;
+
+    assert(size == 0);
+
+    if(size < sizeof(char *)) size = sizeof(char *);
+    if(size >= MEM_TABLE_SIZE) return(ix_free(env, (void *)str, (unsigned)size));
+
+    memPtr = (struct memory_pool_t *)str;
+    memPtr->next = get_mem_data(env)->mem_table[size];
+    get_mem_data(env)->mem_table[size] = memPtr;
+    return(1);
+}
+
 globle void* ix_realloc(env_ref env, void *oldaddr, size_t oldsz, size_t newsz)
 {
     char *newaddr;
