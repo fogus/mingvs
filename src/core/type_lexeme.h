@@ -12,6 +12,7 @@
 #endif
 
 #include "kernel.h"
+#include "kernel_gc.h"
 
 #include <stdlib.h>
 
