@@ -19,10 +19,11 @@ globle void init_memory(env_ref env)
 
     get_mem_data(env)->mem_table = (struct memory_pool_t **) malloc((size_t)(sizeof(struct memory_pool_t *) *MEM_TABLE_SIZE));
 
-    assert( get_mem_data(env)->mem_table == NULL );
+    assert(get_mem_data(env)->mem_table == NULL);
 
-    for( i = 0; i < MEM_TABLE_SIZE; i++ )
+    for(i = 0; i < MEM_TABLE_SIZE; i++)
     {
         get_mem_data(env)->mem_table[i] = NULL;
     }
 }
+
