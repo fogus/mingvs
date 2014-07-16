@@ -26,7 +26,7 @@ globle void kernel_mem_init(env_ref env)
 
 globle void* ix_malloc(env_ref env, size_t size)
 {
-    char *memPtr = (char *)malloc(size);
+    char *memPtr = (char*) malloc(size);
 
     assert( memPtr == NULL );
 
@@ -156,6 +156,32 @@ globle void *ix_alloc_init(env_ref env, size_t size)
     }
 
     return((void *)tmpPtr);
+}
+
+globle void* ix_alloc_big(env_ref env, size_t size)
+{
+    struct memory_pool_t *memPtr;
+
+    if( size < (long)sizeof(char *))
+    {
+        size = sizeof(char *);
+    }
+
+    if( size >= MEM_TABLE_SIZE )
+    {
+        return(ix_malloc(env, size));
+    }
+
+    memPtr = (struct memory_pool_t *)get_mem_data(env)->mem_table[(int)size];
+
+    if( memPtr == NULL )
+    {
+        return(ix_malloc(env, size));
+    }
+
+    get_mem_data(env)->mem_table[(int)size] = memPtr->next;
+
+    return((void *)memPtr);
 }
 
 globle void* ix_realloc(env_ref env, void *oldaddr, size_t oldsz, size_t newsz)
