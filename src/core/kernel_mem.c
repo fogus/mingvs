@@ -87,6 +87,11 @@ globle int ix_release(env_ref env, void *str, size_t size)
     return(1);
 }
 
+globle long int ix_mem_used(void *env)
+{
+    return(get_mem_data(env)->amount);
+}
+
 globle void* ix_realloc(env_ref env, void *oldaddr, size_t oldsz, size_t newsz)
 {
     char *newaddr;
