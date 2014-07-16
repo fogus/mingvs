@@ -103,6 +103,12 @@ globle long int ix_mem_reqs(void *env)
     return(get_mem_data(env)->calls);
 }
 
+globle long int ix_mem_reqs_update(void *env, long int value)
+{
+    get_mem_data(env)->calls += value;
+    return(get_mem_data(env)->calls);
+}
+
 globle void* ix_realloc(env_ref env, void *oldaddr, size_t oldsz, size_t newsz)
 {
     char *newaddr;
