@@ -87,26 +87,75 @@ globle int ix_release(env_ref env, void *str, size_t size)
     return(1);
 }
 
-globle long int ix_mem_used(void *env)
+globle long int ix_mem_used(env_ref env)
 {
     return(get_mem_data(env)->amount);
 }
 
-globle long int ix_mem_used_update(void *env, long int value)
+globle long int ix_mem_used_update(env_ref env, long int value)
 {
     get_mem_data(env)->amount += value;
     return(get_mem_data(env)->amount);
 }
 
-globle long int ix_mem_reqs(void *env)
+globle long int ix_mem_reqs(env_ref env)
 {
     return(get_mem_data(env)->calls);
 }
 
-globle long int ix_mem_reqs_update(void *env, long int value)
+globle long int ix_mem_reqs_update(env_ref env, long int value)
 {
     get_mem_data(env)->calls += value;
     return(get_mem_data(env)->calls);
+}
+
+globle void *ix_alloc_init(env_ref env, size_t size)
+{
+    struct memory_pool_t *memPtr;
+    char *tmpPtr;
+    size_t i;
+
+    if( size < (long)sizeof(char*))
+    {
+        size = sizeof(char*);
+    }
+
+    if( size >= MEM_TABLE_SIZE )
+    {
+        tmpPtr = (char*) ix_malloc(env, (unsigned)size);
+
+        for( i = 0 ; i < size ; i++ )
+        {
+            tmpPtr[i] = '\0';
+        }
+
+        return((void *)tmpPtr);
+    }
+
+    memPtr = (struct memory_pool_t *)get_mem_data(env)->mem_table[size];
+
+    if( memPtr == NULL )
+    {
+        tmpPtr = (char *)ix_malloc(env, (unsigned)size);
+
+        for( i = 0 ; i < size ; i++ )
+        {
+            tmpPtr[i] = '\0';
+        }
+
+        return((void *)tmpPtr);
+    }
+
+    get_mem_data(env)->mem_table[size] = memPtr->next;
+
+    tmpPtr = (char *)memPtr;
+
+    for( i = 0 ; i < size ; i++ )
+    {
+        tmpPtr[i] = '\0';
+    }
+
+    return((void *)tmpPtr);
 }
 
 globle void* ix_realloc(env_ref env, void *oldaddr, size_t oldsz, size_t newsz)
