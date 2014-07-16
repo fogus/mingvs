@@ -42,6 +42,8 @@ LOCALE int   ix_free(env_ref, void*, size_t);
 LOCALE void* ix_alloc(env_ref, size_t);
 LOCALE int ix_release(env_ref, void*, size_t);
 LOCALE long ix_mem_used(env_ref);
+LOCALE long ix_mem_reqs(env_ref);
+
 LOCALE void* ix_realloc(env_ref, void*, size_t, size_t);
 
 #endif
