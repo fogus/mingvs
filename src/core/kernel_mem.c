@@ -92,6 +92,12 @@ globle long int ix_mem_used(void *env)
     return(get_mem_data(env)->amount);
 }
 
+globle long int ix_mem_used_update(void *env, long int value)
+{
+    get_mem_data(env)->amount += value;
+    return(get_mem_data(env)->amount);
+}
+
 globle long int ix_mem_reqs(void *env)
 {
     return(get_mem_data(env)->calls);
