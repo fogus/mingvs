@@ -32,7 +32,12 @@ globle void* env_create(struct symbol_table_node_t** symbol_table)
 {
     struct env_t* env;
     void* data;
-    return(NULL);
+
+    env = (struct env_t*) malloc(sizeof(struct env_t));
+
+
+
+    return(env);
 }
 
 
