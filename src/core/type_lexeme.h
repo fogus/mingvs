@@ -20,12 +20,6 @@
 #define SYMBOL_HASH_SZ          63559L
 #endif
 
-/**
- *  \struct symbol_hash_node_t
- *
- *  Holds the runtime information for individual symbols.
- *
- **/
 struct symbol_table_node_t
 {
     struct symbol_table_node_t* next;

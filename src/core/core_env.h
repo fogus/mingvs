@@ -37,7 +37,7 @@ typedef struct env_t* ENV_PTR;
 #define set_env_data(env, position, value) (((struct env_t *)env)->data[position] = value)
 
 LOCALE void  env_alloc(env_ref, unsigned int, unsigned long);
-LOCALE void* env_create(void);
+LOCALE void* env_create(struct symbol_table_node_t**);
 
 #endif
 

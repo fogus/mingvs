@@ -8,6 +8,7 @@
 #include "kernel.h"
 #include "kernel_gc.h"
 #include "core_env.h"
+//#include "type_lexeme.h"
 
 
 globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz)
@@ -27,8 +28,9 @@ globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz)
     // TODO: Cleanup function?
 }
 
-globle void* env_create()
+globle void* env_create(struct symbol_table_node_t** symbol_table)
 {
   return(NULL);
 }
+
 
