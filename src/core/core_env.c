@@ -8,8 +8,6 @@
 #include "kernel.h"
 #include "kernel_gc.h"
 #include "core_env.h"
-//#include "type_lexeme.h"
-
 
 globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz)
 {
@@ -31,11 +29,18 @@ globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz)
 globle void* env_create(struct symbol_table_node_t** symbol_table)
 {
     struct env_t* env;
-    void* data;
 
     env = (struct env_t*) malloc(sizeof(struct env_t));
 
+    assert(env != NULL);
 
+    /* Now allocate the data slots */
+
+    void* data = malloc(sizeof(void*) * MAXIMUM_ENV_SZ);
+
+    assert(data != NULL);
+
+    env->data = data;
 
     return(env);
 }

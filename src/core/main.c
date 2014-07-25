@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
     struct env_t* env = (struct env_t*) env_create(NULL);
 
     printf("Initialized global env at %p\n", env);
+    printf("... and its data slots at %p\n", env->data);
 
     printf("Initialized symbol table at %p\n", NULL);
     return(1);
