@@ -31,6 +31,6 @@ struct rt_scalar_data_t
 
 #define SCALAR_DATA_INDEX 49
 
-#define get_scalar_data(env) ((struct symbol_data_t *)get_env_data(env, SCALAR_DATA_INDEX))
+#define get_scalar_data(env) ((struct rt_scalar_data_t*) get_env_data(env, SCALAR_DATA_INDEX))
 
 #endif
