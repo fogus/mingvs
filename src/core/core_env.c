@@ -48,7 +48,8 @@ globle void* env_create(struct symbol_table_node_t** symbol_table)
     env->next = NULL;
     env->index = 0;
 
-    env->data = data;
+    // TODO: Cleanup functions?
+    // TODO: System-specific setup?
 
     return(env);
 }
