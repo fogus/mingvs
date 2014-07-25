@@ -7,6 +7,7 @@
 
 #include "kernel.h"
 #include "kernel_gc.h"
+#include "kernel_mem.h"
 #include "core_env.h"
 #include "type_lexeme.h"
 
