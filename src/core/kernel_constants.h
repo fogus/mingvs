@@ -13,6 +13,8 @@
 #define TRUE          1
 #define OFF           FALSE
 #define ON            TRUE
+#define YES           FALSE
+#define NO            TRUE
 #define NEGATIVE      OFF
 #define POSITIVE      ON
 

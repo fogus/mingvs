@@ -40,6 +40,14 @@ globle void* env_create(struct symbol_table_node_t** symbol_table)
 
     assert(data != NULL);
 
+    memset(data, 0, sizeof(void*) * MAXIMUM_ENV_SZ);
+
+    env->initialized = NO;
+    env->data = (void**) data;
+    env->context = NULL;
+    env->next = NULL;
+    env->index = 0;
+
     env->data = data;
 
     return(env);
