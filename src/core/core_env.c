@@ -27,5 +27,8 @@ globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz)
     // TODO: Cleanup function?
 }
 
-
+globle void* env_create()
+{
+  return(NULL);
+}
 
