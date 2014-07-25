@@ -30,7 +30,9 @@ globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz)
 
 globle void* env_create(struct symbol_table_node_t** symbol_table)
 {
-  return(NULL);
+    struct env_t* env;
+    void* data;
+    return(NULL);
 }
 
 
