@@ -15,7 +15,7 @@ globle void init_symbol_table(env_ref env, struct symbol_table_node_t** symtable
 {
     env_alloc(env, SYMBOL_DATA_INDEX, sizeof(struct rt_scalar_data_t));  // TODO: Cleanup function?
 
-    get_atom_data(env)->symbol_table = (SYMBOL_T **) ix_alloc_big(env, sizeof(SYMBOL_T *) * SYMBOL_HASH_SZ);
+    get_scalar_data(env)->symbol_table = (SYMBOL_T **) ix_alloc_big(env, sizeof(SYMBOL_T *) * SYMBOL_HASH_SZ);
 
 }
 

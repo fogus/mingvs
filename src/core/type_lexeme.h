@@ -36,10 +36,6 @@ struct symbol_table_node_t
 
 typedef struct symbol_table_node_t SYMBOL_T;
 
-#define SYMBOL_TABLE_INDEX 49
-
-#define get_symbol_table(env)     ((struct symbol_table_node_t *) get_env_data(env, SYMBOL_TABLE_INDEX))
-
 /* Lexeme function signatures */
 
 LOCALE void init_symbol_table(env_ref, struct symbol_table_node_t **);
