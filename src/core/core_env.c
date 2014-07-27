@@ -9,7 +9,7 @@
 #include "kernel_gc.h"
 #include "core_env.h"
 
-globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz, void(*fn_env_cleanup)(void*))
+globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz)
 {
     struct env_t *env = (struct env_t*) e;
 
