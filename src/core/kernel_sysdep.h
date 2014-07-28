@@ -22,6 +22,6 @@
 #define LOCALE extern
 #endif
 
-LOCALE void* sysdep_init_env(env_ref, struct symbol_table_node_t**);
+LOCALE void sysdep_init_env(env_ref, struct symbol_table_node_t**);
 
 #endif
