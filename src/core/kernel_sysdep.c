@@ -13,6 +13,8 @@
 #include "core_env.h"
 #include "kernel_sysdep.h"
 
-globle void* sysdep_init_env(env_ref env, struct symbol_table_node_t** symbol_table) {
+globle void* sysdep_init_env(env_ref e, struct symbol_table_node_t** symbol_table) {
+    struct env_t *env = (struct env_t *)e;
+
     return NULL;
 }
