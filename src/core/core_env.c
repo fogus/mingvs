@@ -50,7 +50,7 @@ globle void* env_create(struct symbol_table_node_t** symbol_table)
     env->index = 0;
 
     // TODO: Cleanup functions?
-    // TODO: System-specific setup?
+    sysdep_init_env(env, symbol_table);
 
     return(env);
 }
