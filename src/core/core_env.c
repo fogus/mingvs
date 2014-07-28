@@ -7,6 +7,7 @@
 
 #include "kernel.h"
 #include "kernel_gc.h"
+#include "kernel_sysdep.h"
 #include "core_env.h"
 
 globle void env_alloc(env_ref e, unsigned int pos, unsigned long sz)
